@@ -4,321 +4,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE DISPLACEMENT EFFECT | Group 19</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Socio-Economic Impact Report | Group 19</title>
+    <!-- Times New Roman is standard, but we import a nice Serif for fallback/Apple look if needed -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Roboto+Mono:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
 
 <body>
 
-    <!-- UI Controls -->
-    <div class="deck-controls">
-        <div class="progress-container">
-            <div class="progress-bar" id="progressBar"></div>
+    <nav class="top-nav">
+        <div class="nav-left">Business Communication | Group 19</div>
+        <div class="nav-right">
+            <span id="slide-indicator">1 / 10</span>
         </div>
-        <div class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">11</span></div>
-        <button class="nav-btn prev" onclick="changeSlide(-1)"><ion-icon name="arrow-back-outline"></ion-icon></button>
-        <button class="nav-btn next" onclick="changeSlide(1)"><ion-icon
-                name="arrow-forward-outline"></ion-icon></button>
-    </div>
+    </nav>
 
-    <!-- MAIN DECK CONTAINER -->
     <main id="deck">
 
-        <!-- NEW Slide 1: Formal Title & Group Details -->
+        <!-- Slide 1: Formal Title -->
         <section class="slide active" id="slide-1">
-            <div class="slide-content center">
-                <div class="formal-title-container">
-                    <h1 class="formal-title">THE EFFECT ON LOCAL AUTO AND TAXI DRIVERS DUE TO THE INCREASE IN ONLINE CAB
-                        SERVICES IN BHOPAL</h1>
-                    <h2 class="formal-group">GROUP 19</h2>
-                    <div class="member-grid">
-                        <div class="member-row"><span>Aryan Kori</span><span class="id">25SD08</span></div>
-                        <div class="member-row"><span>Rahul Tiwari</span><span class="id">25SD30</span></div>
-                        <div class="member-row"><span>Tanya</span><span class="id">25SD39</span></div>
-                        <div class="member-row"><span>Vishwajeet Singh Choudhary</span><span class="id">25SF47</span>
-                        </div>
+            <div class="content centralized">
+                <div class="institution">Indian Institute of Forest Management, Bhopal</div>
+                <h1 class="main-title">The Effect on Local Auto and Taxi Drivers Due to the Increase in Online Cab
+                    Services in Bhopal</h1>
+                <div class="divider"></div>
+                <div class="group-details">
+                    <div class="member"><span>Aryan Kori</span><span class="id">25SD08</span></div>
+                    <div class="member"><span>Rahul Tiwari</span><span class="id">25SD30</span></div>
+                    <div class="member"><span>Tanya</span><span class="id">25SD39</span></div>
+                    <div class="member"><span>Vishwajeet Singh C.</span><span class="id">25SF47</span></div>
+                </div>
+                <div class="date">December 5, 2025</div>
+            </div>
+        </section>
+
+        <!-- Slide 2: Introduction -->
+        <section class="slide" id="slide-2">
+            <div class="content split">
+                <div class="text-block">
+                    <h2>Introduction</h2>
+                    <p class="lead">Transportation is the backbone of the urban economy. For decades, "Kaali-Peeli"
+                        autos dominated Bhopal's streets.</p>
+                    <p>The entry of <strong>Ola, Uber, and Rapido</strong> has disrupted this ecosystem. While consumers
+                        gain convenience, traditional drivers face an existential crisis.</p>
+                    <div class="quote-box">
+                        "The 'Uberisation' of transport employs algorithmic management to replace human autonomy."
+                        <br>— <em>Raj (2019)</em>
                     </div>
                 </div>
-            </div>
-            <div class="bg-overlay-dark"></div>
-        </section>
-
-        <!-- Slide 2: The Hook (Formerly Slide 1) -->
-        <section class="slide" id="slide-2">
-            <div class="slide-content center">
-                <div class="tagline">PART 1: THE REALITY</div>
-                <h1 class="glitch" data-text="THE DISPLACEMENT EFFECT">THE DISPLACEMENT EFFECT</h1>
-                <h2 class="subtitle">How Technocratic 'Efficiency' is Erasing Bhopal's Auto Drivers</h2>
-                <div class="meta-block">
-                    <p>December 2025</p>
+                <div class="visual-block">
+                    <img src="assets/field_photo_1.jpg" alt="Field Research Team" class="photo shadow">
+                    <span class="caption">Primary Field Visit: Rani Kamlapati Station</span>
                 </div>
             </div>
-            <div class="bg-img"
-                style="background-image: url('https://images.unsplash.com/photo-1596423736569-47043812855f?q=80&w=2070&auto=format&fit=crop');">
-            </div>
         </section>
 
-        <!-- Slide 3: Introduction / Context -->
+        <!-- Slide 3: Objectives & Theory -->
         <section class="slide" id="slide-3">
-            <div class="slide-content">
-                <div class="header-block">
-                    <h3>01. CONTEXT</h3>
-                    <h2>TECHNOLOGICAL DISPLACEMENT</h2>
-                </div>
-                <div class="split-layout">
-                    <div class="text-col">
-                        <p class="lead">The shift in <strong>Intermediate Public Transport (IPT)</strong> in Bhopal has
-                            moved from traditional "Kaali-Peeli" autos to algorithmic aggregators (Ola, Uber, Rapido).
-                        </p>
-                        <ul class="bullet-list">
-                            <li><strong>The Phenomenon:</strong> "Uberisation" - Algorithmic management replacing human
-                                autonomy.</li>
-                            <li><strong>The Conflict:</strong> Tech giants weaponizing venture capital against
-                                unorganized labor.</li>
-                            <li><strong>The Lie:</strong> "Convenience" for the consumer is purchased with the
-                                "Precarity" of the driver.</li>
+            <div class="content">
+                <h2>Objectives & Framework</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>Research Objectives</h3>
+                        <ul>
+                            <li>Assess socio-economic impact on drivers.</li>
+                            <li>Analyze income and volume shifts.</li>
+                            <li>Identify adaptation strategies.</li>
+                            <li>Propose "Just Transition" policies.</li>
                         </ul>
                     </div>
-                    <div class="img-col">
-                        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop"
-                            alt="Traffic blur">
+                    <div class="card">
+                        <h3>Theoretical Lens</h3>
+                        <p><strong>Schumpeter’s Creative Destruction</strong></p>
+                        <p>Innovation incessantly revolutionizes the economic structure from within, destroying the old
+                            one.</p>
+                        <div class="icon-stat">
+                            <ion-icon name="trending-down-outline"></ion-icon>
+                            <span>Destruction of Old Livelihoods</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 4: Aim & Framework -->
+        <!-- Slide 4: Methodology -->
         <section class="slide" id="slide-4">
-            <div class="slide-content">
-                <div class="header-block">
-                    <h3>02. FRAMEWORK</h3>
-                    <h2>AIM & OBJECTIVES</h2>
-                </div>
-                <div class="grid-card-layout">
-                    <div class="card aim">
-                        <h4>PRIMARY AIM</h4>
-                        <p>To assess the socio-economic impact of online cab aggregators on traditional auto and taxi
-                            drivers in Bhopal.</p>
+            <div class="content">
+                <h2>Methodology</h2>
+                <div class="method-row">
+                    <div class="m-step">
+                        <div class="circle">N=40</div>
+                        <h4>Sample Size</h4>
+                        <p>Stratified Convenience Sampling</p>
                     </div>
-                    <div class="card theory">
-                        <h4>THEORETICAL LENS</h4>
-                        <p><strong>Schumpeter’s "Creative Destruction":</strong><br> Innovation that incessantly
-                            revolutionizes the economic structure from within, destroying the old one.</p>
+                    <div class="m-step">
+                        <div class="circle">6</div>
+                        <h4>Zones</h4>
+                        <p>MP Nagar, New Market, BHEL, etc.</p>
+                    </div>
+                    <div class="m-step">
+                        <div class="circle">10</div>
+                        <h4>Items</h4>
+                        <p>Structured Questionnaire</p>
                     </div>
                 </div>
-                <div class="objectives-list">
-                    <h4>SPECIFIC OBJECTIVES:</h4>
-                    <ol>
-                        <li>Analyze shifts in monthly income and customer volume.</li>
-                        <li>Identify adaptation strategies (price wars, zone shifting).</li>
-                        <li>Propose policy frameworks for "Just Transition".</li>
-                    </ol>
+                <div class="photo-strip">
+                    <img src="assets/field_photo_2.jpg" class="photo small" alt="Interviewing">
+                    <img src="assets/field_photo_3.jpg" class="photo small" alt="Surveying">
                 </div>
             </div>
         </section>
 
-        <!-- Slide 5: Methodology -->
+        <!-- Slide 5: Economic Impact (Chart) -->
         <section class="slide" id="slide-5">
-            <div class="slide-content">
-                <div class="header-block">
-                    <h3>03. METHODOLOGY</h3>
-                    <h2>RESEARCH DESIGN</h2>
-                </div>
-                <div class="method-grid">
-                    <div class="m-item">
-                        <ion-icon name="analytics-outline"></ion-icon>
-                        <h4>DESIGN</h4>
-                        <p>Descriptive Quantitative Research</p>
-                    </div>
-                    <div class="m-item">
-                        <ion-icon name="people-outline"></ion-icon>
-                        <h4>SAMPLE</h4>
-                        <p>N = 40 Drivers<br>(Stratified Convenience Sampling)</p>
-                    </div>
-                    <div class="m-item">
-                        <ion-icon name="map-outline"></ion-icon>
-                        <h4>ZONES</h4>
-                        <p>Rani Kamlapati, MP Nagar, New Market, BHEL, Arera Colony</p>
-                    </div>
-                    <div class="m-item">
-                        <ion-icon name="time-outline"></ion-icon>
-                        <h4>TIMING</h4>
-                        <p>Off-peak hours (10 AM - 2 PM)</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Slide 6: Results - Income Data -->
-        <section class="slide" id="slide-6">
-            <div class="slide-content">
-                <div class="header-block">
-                    <h3>04. KEY FINDINGS</h3>
-                    <h2>THE BLEEDING EFFECT</h2>
-                </div>
+            <div class="content">
+                <h2>The Economic Erosion</h2>
                 <div class="chart-container">
-                    <h4>MEDIAN MONTHLY INCOME COMPARISON</h4>
-                    <div class="bar-chart">
-                        <div class="bar-group">
-                            <div class="bar pre" style="height: 80%;"><span>₹18,000</span></div>
-                            <div class="label">PRE-AGGREGATOR</div>
-                        </div>
-                        <div class="bar-group">
-                            <div class="bar post" style="height: 35%;"><span>₹8,500</span></div>
-                            <div class="label">CURRENT</div>
-                        </div>
-                    </div>
-                    <div class="chart-insight">
-                        <p class="huge-stat">-55%</p>
-                        <p>COLLAPSE IN EARNINGS</p>
-                        <p class="sub-text">Drivers have shifted from "Lower Middle Class" to "Urban Poor".</p>
-                    </div>
+                    <canvas id="incomeChart"></canvas>
+                </div>
+                <div class="insight-box">
+                    <p><strong>Finding:</strong> A drastic shift from higher income brackets to lower ones. Many drivers
+                        earning >₹15k have fallen below ₹10k.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 7: Hidden Costs -->
+        <!-- Slide 6: Customer Volume (Chart) -->
+        <section class="slide" id="slide-6">
+            <div class="content">
+                <h2>Impact on Daily Volume</h2>
+                <div class="chart-container">
+                    <canvas id="volumeChart"></canvas>
+                </div>
+                <div class="insight-box">
+                    <p><strong>Finding:</strong> 85% of respondents reported a "Significant Decrease" in daily ridership
+                        due to app efficiency.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Adaptation Strategies -->
         <section class="slide" id="slide-7">
-            <div class="slide-content">
-                <div class="header-block">
-                    <h3>05. ANALYSIS</h3>
-                    <h2>THE DESPERATION INDEX</h2>
-                </div>
-                <p class="section-intro">Beyond the income drop, the structural costs have made the profession
-                    unsustainable.</p>
-                <div class="cards-row">
-                    <div class="cost-card">
-                        <h3>₹1,800</h3>
-                        <p>Monthly EMI Burden on depreciating assets.</p>
+            <div class="content">
+                <h2>Coping Mechanisms</h2>
+                <div class="split">
+                    <div class="chart-container half">
+                        <canvas id="strategyChart"></canvas>
                     </div>
-                    <div class="cost-card">
-                        <h3>300%</h3>
-                        <p>Increase in Idle Waiting Time at stands.</p>
-                    </div>
-                    <div class="cost-card alert">
-                        <h3>ZERO</h3>
-                        <p>Social Security or Insurance Access.</p>
+                    <div class="text-block">
+                        <ul>
+                            <li><strong>Price Wars:</strong> Reducing fares to match apps (unsustainable).</li>
+                            <li><strong>Zone Shifting:</strong> Moving to peripheral areas like BHEL.</li>
+                            <li><strong>Digital Exclusion:</strong> Older drivers cannot adapt to smartphone UIs.</li>
+                        </ul>
                     </div>
                 </div>
-                <blockquote class="driver-quote">
-                    "Earlier we waited for passengers. Now we wait for the algorithm to bless us."
-                </blockquote>
             </div>
         </section>
 
-        <!-- Slide 8: Perception & Divide -->
+        <!-- Slide 8: Field Observations -->
         <section class="slide" id="slide-8">
-            <div class="slide-content">
-                <div class="header-block">
-                    <h3>06. CHALLENGES</h3>
-                    <h2>SYSTEMIC EXCLUSION</h2>
+            <div class="content">
+                <h2>Field Reality</h2>
+                <div class="testimony-grid">
+                    <div class="testimony">
+                        <p>"Earlier we set the price. Now the phone tells us what we are worth."</p>
+                        <cite>— Auto Driver, Platform 3</cite>
+                    </div>
+                    <div class="testimony">
+                        <p>"Monsoons are the only time we earn, because the apps surge 3x and people come back to us."
+                        </p>
+                        <cite>— Driver, age 52</cite>
+                    </div>
                 </div>
-                <div class="split-layout">
-                    <div class="text-col">
-                        <h4>THE DIGITAL DIVIDE</h4>
-                        <p>Older drivers (45+) are systematically excluded. They lack the digital literacy to navigate
-                            complex UIs, effectively making the technology a <strong>barrier to entry</strong> rather
-                            than a tool.</p>
-                        <h4>SEASONAL TYRANNY</h4>
-                        <p>During Monsoons, apps use "Surge Pricing" which benefits the platform. Traditional autos
-                            often refuse rides due to waterlogging risks, further pushing customers to apps.</p>
-                    </div>
-                    <div class="stat-col">
-                        <div class="circle-chart" style="background: conic-gradient(var(--accent-red) 85%, #333 0);">
-                            <span>85%</span>
-                        </div>
-                        <p>NEGATIVE SENTIMENT</p>
-                        <small>Share of drivers viewing Aggregators as a threat</small>
-                    </div>
+                <div class="stat-highlight">
+                    <div class="big-num">₹1,800</div>
+                    <div class="label">Avg. Monthly EMI Burden</div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 9: Recommendations -->
+        <!-- Slide 9: Conclusion & Policy -->
         <section class="slide" id="slide-9">
-            <div class="slide-content">
-                <div class="header-block">
-                    <h3>07. POLICY</h3>
-                    <h2>THE 4-PILLAR STRATEGY</h2>
-                </div>
-                <div class="rec-grid">
-                    <div class="rec-item">
-                        <div class="rec-num">1</div>
-                        <h3>BHOPAL YATRA APP</h3>
-                        <p>Develop a government-backed, Open Network (ONDC) compatible app with <strong>Zero
-                                Commission</strong>. Model: Namma Yatri (Bangalore).</p>
+            <div class="content">
+                <h2>Recommendations: A Just Transition</h2>
+                <div class="rec-cards">
+                    <div class="rec">
+                        <h4>1. Bhopal Yatra App</h4>
+                        <p>Govt-backed, Zero-commission (ONDC Model).</p>
                     </div>
-                    <div class="rec-item">
-                        <div class="rec-num">2</div>
-                        <h3>FARE RATIONALIZATION</h3>
-                        <p>Link minimum fares dynamically to fuel prices (currently ₹106/L). Stop the "Race to the
-                            Bottom".</p>
+                    <div class="rec">
+                        <h4>2. Fare Rationalization</h4>
+                        <p>Dynamic minimum fare linked to fuel prices (₹106/L).</p>
                     </div>
-                    <div class="rec-item">
-                        <div class="rec-num">3</div>
-                        <h3>DIGITAL SAATHI</h3>
-                        <p>Targeted training programs for the 45+ demographic to bridge the digital divide.</p>
-                    </div>
-                    <div class="rec-item">
-                        <div class="rec-num">4</div>
-                        <h3>SOCIAL SECURITY</h3>
-                        <p>Mandatory Welfare Board registration for all gig/transport workers (Pension/Insurance).</p>
+                    <div class="rec">
+                        <h4>3. Digital Saathi</h4>
+                        <p>Upskilling for drivers aged 45+.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 10: Conclusion -->
+        <!-- Slide 10: References -->
         <section class="slide" id="slide-10">
-            <div class="slide-content center">
-                <div class="header-block">
-                    <h3>08. CONCLUSION</h3>
-                    <h2>A CALL FOR JUST TRANSITION</h2>
-                </div>
-                <p class="final-statement">Innovation without inclusion is merely extraction.</p>
-                <div class="conclusion-box">
-                    <p>We found clear evidence of <strong>Technological Displacement</strong>. Without immediate
-                        intervention by Q1 2026, 40,000 drivers face a choice between the informal gig economy or debt
-                        spirals.</p>
-                    <p><strong>The Question:</strong> Will we preserve the "Convenience" of the few at the cost of the
-                        livelihood of the many?</p>
-                </div>
-            </div>
-            <div class="bg-overlay"></div>
-        </section>
-
-        <!-- Slide 11: References -->
-        <section class="slide" id="slide-11">
-            <div class="slide-content">
-                <div class="header-block">
-                    <h3>09. ACADEMIC INTEGRITY</h3>
-                    <h2>REFERENCES</h2>
-                </div>
+            <div class="content">
+                <h2>References</h2>
                 <ul class="ref-list">
-                    <li>Gupta, R. & Kumar, S. (2021). <em>Consumer Perception of E-Hailing Apps in Tier-2 Cities</em>.
-                        Journal of Urban Transport.</li>
-                    <li>Raj, M. (2019). <em>The 'Uberisation' of Auto-Rickshaws in India: Efficiency vs Equity</em>.
-                        Journal of Development Policy.</li>
-                    <li>Schumpeter, J. A. (1942). <em>Capitalism, Socialism and Democracy</em>. Harper & Brothers.</li>
-                    <li>Verma, K. (2024). <em>Socio-Economic Distress among Auto Drivers in Delhi-NCR</em>. Social
-                        Change.</li>
-                    <li>NITI Aayog (2023). <em>Policy Brief: The Future of Work and the Gig Economy</em>. Government of
-                        India.</li>
+                    <li>Gupta, R. & Kumar, S. (2021). <em>Consumer Perception of E-Hailing Apps</em>. Journal of Urban
+                        Transport.</li>
+                    <li>Raj, M. (2019). <em>The 'Uberisation' of Auto-Rickshaws in India</em>. Journal of Development
+                        Policy.</li>
+                    <li>Schumpeter, J. A. (1942). <em>Capitalism, Socialism and Democracy</em>.</li>
+                    <li>Verma, K. (2024). <em>Socio-Economic Distress among Auto Drivers</em>. Social Change.</li>
+                    <li>NITI Aayog (2023). <em>The Future of Work and the Gig Economy</em>.</li>
                 </ul>
-                <div class="thank-you">
-                    <h2>THANK YOU</h2>
-                    <p>FLOOR OPEN FOR Q&A</p>
-                </div>
+                <div class="end-note">Thank You</div>
             </div>
         </section>
 
     </main>
+
+    <div class="controls">
+        <button onclick="prevSlide()"><ion-icon name="chevron-back-outline"></ion-icon></button>
+        <button onclick="nextSlide()"><ion-icon name="chevron-forward-outline"></ion-icon></button>
+    </div>
 
     <script src="script.js"></script>
 </body>
