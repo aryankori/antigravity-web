@@ -44,16 +44,16 @@ function initCarousel() {
 
     // List of assets found in directory - RESTORED REAL EVIDENCE
     const assets = [
-        'IMG-20251204-WA0267.jpg',
-        'VID-20251204-WA0273.mp4',
-        'IMG-20251204-WA0276.jpg',
-        'IMG-20251204-WA0278.jpg',
-        'IMG-20251204-WA0282.jpg',
-        'IMG-20251204-WA0286.jpg',
-        'IMG-20251204-WA0303.jpg',
-        'IMG-20251204-WA0314.jpg',
-        'IMG-20251204-WA0318.jpg',
-        'IMG-20251204-WA0328.jpg'
+        '/IMG-20251204-WA0267.jpg',
+        '/VID-20251204-WA0273.mp4',
+        '/IMG-20251204-WA0276.jpg',
+        '/IMG-20251204-WA0278.jpg',
+        '/IMG-20251204-WA0282.jpg',
+        '/IMG-20251204-WA0286.jpg',
+        '/IMG-20251204-WA0303.jpg',
+        '/IMG-20251204-WA0314.jpg',
+        '/IMG-20251204-WA0318.jpg',
+        '/IMG-20251204-WA0328.jpg'
     ];
 
     const cellCount = assets.length;
