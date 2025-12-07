@@ -1,239 +1,489 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Socio-Economic Impact Report | Group 19</title>
-    <!-- Times New Roman is standard, but we import a nice Serif for fallback/Apple look if needed -->
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
         rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        victorian: {
+                            dark: '#0f172a', /* Slate 900 base */
+                            darker: '#020617', /* Slate 950 */
+                            gold: '#C5A059', /* Muted Gold */
+                            cream: '#E5E5D8', /* Muted Cream */
+                            crimson: '#701C2A', /* Crimson */
+                            charcoal: '#1A1A1A',
+                        }
+                    },
+                    fontFamily: {
+                        decorative: ['Cinzel', 'serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        body: ['Lato', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
 
-<body>
+<body
+    class="bg-victorian-darker text-victorian-cream font-body overflow-x-hidden selection:bg-victorian-gold selection:text-victorian-darker">
 
-    <nav class="top-nav">
-        <div class="nav-left">Business Communication | Group 19</div>
-        <div class="nav-right">
-            <span id="slide-indicator">1 / 10</span>
-        </div>
-    </nav>
+    <!-- Subtle Frame -->
+    <div class="fixed inset-4 pointer-events-none z-50 border border-victorian-gold/30"></div>
 
-    <main id="deck">
+    <main class="h-screen w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth no-scrollbar" id="main-scroll">
 
-        <!-- Slide 1: Formal Title -->
-        <section class="slide active" id="slide-1">
-            <div class="content centralized">
-                <div class="institution">Indian Institute of Forest Management, Bhopal</div>
-                <h1 class="main-title">The Effect on Local Auto and Taxi Drivers Due to the Increase in Online Cab
-                    Services in Bhopal</h1>
-                <div class="divider"></div>
-                <div class="group-details">
-                    <div class="member"><span>Aryan Kori</span><span class="id">25SD08</span></div>
-                    <div class="member"><span>Rahul Tiwari</span><span class="id">25SD30</span></div>
-                    <div class="member"><span>Tanya</span><span class="id">25SD39</span></div>
-                    <div class="member"><span>Vishwajeet Singh C.</span><span class="id">25SF47</span></div>
+        <!-- Slide 1: TITLE -->
+        <section
+            class="h-screen w-full snap-start flex flex-col items-center justify-center relative bg-victorian-darker p-12"
+            id="slide-1">
+            <div class="z-10 text-center max-w-6xl animate-fade-in-up flex flex-col justify-evenly h-[80vh]">
+                <div class="border-b border-victorian-gold/40 pb-4 inline-block self-center">
+                    <p class="font-decorative text-victorian-gold tracking-[0.2em] text-xl uppercase">Indian Institute
+                        of Forest Management</p>
                 </div>
-                <div class="date">December 5, 2025</div>
-            </div>
-        </section>
 
-        <!-- Slide 2: Introduction -->
-        <section class="slide" id="slide-2">
-            <div class="content split">
-                <div class="text-block">
-                    <h2>Introduction</h2>
-                    <p class="lead">Transportation is the backbone of the urban economy. For decades, "Kaali-Peeli"
-                        autos dominated Bhopal's streets.</p>
-                    <p>The entry of <strong>Ola, Uber, and Rapido</strong> has disrupted this ecosystem. While consumers
-                        gain convenience, traditional drivers face an existential crisis.</p>
-                    <div class="quote-box">
-                        "The 'Uberisation' of transport employs algorithmic management to replace human autonomy."
-                        <br>— <em>Raj (2019)</em>
-                    </div>
-                </div>
-                <div class="visual-block">
-                    <img src="assets/field_photo_1.jpg" alt="Field Research Team" class="photo shadow">
-                    <span class="caption">Primary Field Visit: Rani Kamlapati Station</span>
+                <h1 class="font-decorative text-6xl md:text-7xl text-victorian-cream leading-tight drop-shadow-md py-8">
+                    The Gig Economy Disruption
+                </h1>
+
+                <h2 class="font-serif italic text-3xl md:text-4xl text-gray-400">
+                    Impact of Online Cab Services on <br> <span class="text-victorian-gold">Local Drivers in
+                        Bhopal</span>
+                </h2>
+
+                <div class="flex justify-center gap-16 text-lg text-gray-500 font-serif uppercase tracking-widest mt-8">
+                    <div>Group 19</div>
+                    <div>Business Communication</div>
+                    <div>Dec 2025</div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 3: Objectives & Theory -->
-        <section class="slide" id="slide-3">
-            <div class="content">
-                <h2>Objectives & Framework</h2>
-                <div class="grid-2">
-                    <div class="card">
-                        <h3>Research Objectives</h3>
-                        <ul>
-                            <li>Assess socio-economic impact on drivers.</li>
-                            <li>Analyze income and volume shifts.</li>
-                            <li>Identify adaptation strategies.</li>
-                            <li>Propose "Just Transition" policies.</li>
-                        </ul>
+        <!-- Slide 2: INTRODUCTION -->
+        <section class="h-screen w-full snap-start flex items-center justify-center bg-victorian-dark p-16"
+            id="slide-2">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 max-w-7xl w-full h-full items-center">
+                <div class="space-y-10 reveal-left flex flex-col justify-center">
+                    <h2 class="font-decorative text-5xl text-victorian-gold border-l-8 border-victorian-gold pl-8">The
+                        Transition</h2>
+
+                    <div class="space-y-8 text-2xl font-serif text-gray-300 leading-relaxed">
+                        <p>
+                            Urban mobility has shifted. The traditional <span
+                                class="text-victorian-gold italic">"Kaali-Peeli"</span> autos, Bhopal's transport
+                            backbone, are being displaced.
+                        </p>
+                        <p>
+                            Algorithmic management replaces autonomy. <strong class="text-white">Ola & Uber</strong>
+                            represent a paradigm shift.
+                        </p>
                     </div>
-                    <div class="card">
-                        <h3>Theoretical Lens</h3>
-                        <p><strong>Schumpeter’s Creative Destruction</strong></p>
-                        <p>Innovation incessantly revolutionizes the economic structure from within, destroying the old
-                            one.</p>
-                        <div class="icon-stat">
-                            <ion-icon name="trending-down-outline"></ion-icon>
-                            <span>Destruction of Old Livelihoods</span>
+
+                    <div class="p-8 bg-victorian-darker/50 border-l-4 border-victorian-crimson shadow-lg">
+                        <p class="italic text-xl text-gray-400 font-serif leading-relaxed">
+                            "The 'Uberisation' employs algorithms to replace human autonomy, turning drivers into data
+                            points."
+                        </p>
+                        <p class="text-right text-victorian-crimson text-base font-bold mt-4 tracking-widest">— RAJ
+                            (2019)</p>
+                    </div>
+                </div>
+
+                <div class="relative w-full h-[60vh] reveal-right group">
+                    <img src="IMG-20251204-WA0267.jpg" alt="Field Visit"
+                        class="w-full h-full object-cover shadow-2xl grayscale-[0.2] sepia-[0.3] border-2 border-gray-700/50">
+                    <div
+                        class="absolute bottom-0 left-0 bg-black/80 px-6 py-3 text-lg text-victorian-gold font-decorative">
+                        Figure 1: Field Investigation</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: OBJECTIVES -->
+        <section class="h-screen w-full snap-start flex items-center justify-center bg-victorian-darker p-16"
+            id="slide-3">
+            <div class="w-full max-w-[90%] grid grid-cols-1 md:grid-cols-2 gap-16 h-[80vh] items-center">
+                <!-- Box 1 -->
+                <div
+                    class="bg-victorian-dark p-12 h-full flex flex-col justify-center border-2 border-victorian-gold/20 hover:border-victorian-gold/50 transition-colors reveal-bottom shadow-xl">
+                    <h3 class="font-decorative text-4xl text-victorian-cream mb-10 pb-6 border-b border-gray-800">
+                        Investigative Goals</h3>
+                    <ul class="space-y-8 font-serif text-2xl text-gray-300">
+                        <li class="flex items-start"><span class="text-victorian-gold mr-4 text-3xl">❖</span> Assess
+                            socio-economic impact.</li>
+                        <li class="flex items-start"><span class="text-victorian-gold mr-4 text-3xl">❖</span> Analyze
+                            income volatility.</li>
+                        <li class="flex items-start"><span class="text-victorian-gold mr-4 text-3xl">❖</span> Identify
+                            coping mechanisms.</li>
+                    </ul>
+                </div>
+
+                <!-- Box 2 -->
+                <div
+                    class="bg-victorian-dark p-12 h-full flex flex-col justify-center border-2 border-victorian-gold/20 hover:border-victorian-crimson/50 transition-colors reveal-bottom delay-100 shadow-xl">
+                    <h3 class="font-decorative text-4xl text-victorian-cream mb-10 pb-6 border-b border-gray-800">
+                        Theoretical Lens</h3>
+                    <p class="text-3xl font-decorative text-victorian-gold mb-6">Joseph Schumpeter</p>
+                    <p class="text-2xl text-gray-400 italic font-serif leading-loose">
+                        "Creative Destruction: The process that incessantly revolutionizes the economic
+                        structure from
+                        within, continuously destroying the old one."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: METHODOLOGY -->
+        <section class="h-screen w-full snap-start flex flex-col justify-evenly items-center bg-victorian-dark p-12"
+            id="slide-4">
+            <h2 class="font-decorative text-5xl text-victorian-gold mb-8 border-b-2 border-victorian-gold/30 pb-4">
+                Methodological Approach</h2>
+
+            <div class="flex flex-wrap justify-center gap-24 w-full max-w-[90%]">
+                <!-- Icon 1 -->
+                <div class="flex flex-col items-center text-center reveal-bottom">
+                    <div
+                        class="w-32 h-32 rounded-full border-4 border-victorian-gold flex items-center justify-center text-5xl text-victorian-gold bg-victorian-darker mb-8 shadow-lg">
+                        <ion-icon name="people-outline"></ion-icon>
+                    </div>
+                    <div class="text-4xl font-bold text-victorian-cream font-serif mb-3">N=40</div>
+                    <div class="text-xl text-gray-500 font-serif uppercase">Stratified Sample</div>
+                </div>
+
+                <!-- Icon 2 -->
+                <div class="flex flex-col items-center text-center reveal-bottom delay-100">
+                    <div
+                        class="w-32 h-32 rounded-full border-4 border-victorian-crimson flex items-center justify-center text-5xl text-victorian-crimson bg-victorian-darker mb-8 shadow-lg">
+                        <ion-icon name="map-outline"></ion-icon>
+                    </div>
+                    <div class="text-4xl font-bold text-victorian-cream font-serif mb-3">6 Zones</div>
+                    <div class="text-xl text-gray-500 font-serif uppercase">Key Locations</div>
+                </div>
+
+                <!-- Icon 3 -->
+                <div class="flex flex-col items-center text-center reveal-bottom delay-200">
+                    <div
+                        class="w-32 h-32 rounded-full border-4 border-victorian-gold flex items-center justify-center text-5xl text-victorian-gold bg-victorian-darker mb-8 shadow-lg">
+                        <ion-icon name="clipboard-outline"></ion-icon>
+                    </div>
+                    <div class="text-4xl font-bold text-victorian-cream font-serif mb-3">Survey</div>
+                    <div class="text-xl text-gray-500 font-serif uppercase">Instrument</div>
+                </div>
+            </div>
+
+            <div class="p-6 bg-black/20 border border-victorian-gold/20 rounded-lg mt-8">
+                <p class="text-gray-400 font-serif italic text-xl text-center">
+                    Sampled at high-density nodes: MP Nagar, New Market, and BHEL.
+                </p>
+            </div>
+        </section>
+
+        <!-- Slide A: QUESTIONNAIRE TO REALITY -->
+        <section class="h-screen w-full snap-start flex items-center justify-center bg-victorian-darker p-16"
+            id="slide-A">
+            <div class="w-full max-w-[90%] grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+                <div class="space-y-16">
+                    <h2 class="font-decorative text-5xl text-white">Quantitative to <span
+                            class="text-victorian-gold">Qualitative</span></h2>
+
+                    <div class="space-y-10 font-serif">
+                        <div class="flex items-center gap-6">
+                            <span class="text-victorian-crimson text-4xl font-bold">92%</span>
+                            <p class="text-2xl text-gray-300">of interviews showed emotional distress.
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-6">
+                            <span class="text-victorian-gold text-4xl font-bold">23m</span>
+                            <p class="text-2xl text-gray-300">average interview duration characterized
+                                by grievances.
+                            </p>
                         </div>
                     </div>
+
+                    <div class="border-l-8 border-victorian-crimson pl-8 py-4 bg-victorian-dark/50">
+                        <p class="text-3xl text-victorian-cream font-serif italic mb-4">"I can no longer
+                            feed my
+                            family."</p>
+                        <p class="text-lg text-gray-500 uppercase tracking-widest">— Respondent #14</p>
+                    </div>
+                </div>
+
+                <div
+                    class="h-[500px] w-full bg-gray-900 border-2 border-gray-800 flex items-center justify-center shadow-2xl relative group">
+                    <img src="IMG-20251204-WA0276.jpg" alt="Respondent Interview"
+                        class="w-full h-full object-cover grayscale-[0.2] sepia-[0.2] opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                    <div class="absolute bottom-4 right-4 bg-black/80 px-4 py-2 text-sm text-victorian-gold font-serif">
+                        Figure 2: Respondent 14</div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 4: Methodology -->
-        <section class="slide" id="slide-4">
-            <div class="content">
-                <h2>Methodology</h2>
-                <div class="method-row">
-                    <div class="m-step">
-                        <div class="circle">N=40</div>
-                        <h4>Sample Size</h4>
-                        <p>Stratified Convenience Sampling</p>
-                    </div>
-                    <div class="m-step">
-                        <div class="circle">6</div>
-                        <h4>Zones</h4>
-                        <p>MP Nagar, New Market, BHEL, etc.</p>
-                    </div>
-                    <div class="m-step">
-                        <div class="circle">10</div>
-                        <h4>Items</h4>
-                        <p>Structured Questionnaire</p>
-                    </div>
-                </div>
-                <div class="photo-strip">
-                    <img src="assets/field_photo_2.jpg" class="photo small" alt="Interviewing">
-                    <img src="assets/field_photo_3.jpg" class="photo small" alt="Surveying">
-                </div>
-            </div>
-        </section>
+        <!-- Slide 5: INCOME CHART -->
+        <section class="h-screen w-full snap-start flex flex-col justify-center items-center bg-victorian-dark p-16"
+            id="slide-5">
+            <div class="w-full max-w-[90%] h-full flex flex-col items-center justify-evenly">
+                <h2 class="font-decorative text-4xl text-victorian-cream border-b-2 border-victorian-gold/30 pb-4">
+                    Economic Erosion Analysis</h2>
 
-        <!-- Slide 5: Economic Impact (Chart) -->
-        <section class="slide" id="slide-5">
-            <div class="content">
-                <h2>The Economic Erosion</h2>
-                <div class="chart-container">
+                <div class="w-full h-[55vh] relative bg-victorian-darker/50 p-8 border border-gray-800 shadow-xl">
                     <canvas id="incomeChart"></canvas>
                 </div>
-                <div class="insight-box">
-                    <p><strong>Finding:</strong> A drastic shift from higher income brackets to lower ones. Many drivers
-                        earning >₹15k have fallen below ₹10k.</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- Slide 6: Customer Volume (Chart) -->
-        <section class="slide" id="slide-6">
-            <div class="content">
-                <h2>Impact on Daily Volume</h2>
-                <div class="chart-container">
-                    <canvas id="volumeChart"></canvas>
-                </div>
-                <div class="insight-box">
-                    <p><strong>Finding:</strong> 85% of respondents reported a "Significant Decrease" in daily ridership
-                        due to app efficiency.</p>
-                </div>
-            </div>
-        </section>
+                id="slide-6">
+                <div class="w-full max-w-[95%] grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+                    <div class="h-[500px] w-full relative">
+                        <canvas id="volumeChart"></canvas>
+                    </div>
 
-        <!-- Slide 7: Adaptation Strategies -->
-        <section class="slide" id="slide-7">
-            <div class="content">
-                <h2>Coping Mechanisms</h2>
-                <div class="split">
-                    <div class="chart-container half">
-                        <canvas id="strategyChart"></canvas>
-                    </div>
-                    <div class="text-block">
-                        <ul>
-                            <li><strong>Price Wars:</strong> Reducing fares to match apps (unsustainable).</li>
-                            <li><strong>Zone Shifting:</strong> Moving to peripheral areas like BHEL.</li>
-                            <li><strong>Digital Exclusion:</strong> Older drivers cannot adapt to smartphone UIs.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    <div class="space-y-12">
+                        <h2 class="font-decorative text-4xl text-victorian-cream border-l-8 border-victorian-gold pl-6">
+                            Ridership Disruption</h2>
 
-        <!-- Slide 8: Field Observations -->
-        <section class="slide" id="slide-8">
-            <div class="content">
-                <h2>Field Reality</h2>
-                <div class="testimony-grid">
-                    <div class="testimony">
-                        <p>"Earlier we set the price. Now the phone tells us what we are worth."</p>
-                        <cite>— Auto Driver, Platform 3</cite>
-                    </div>
-                    <div class="testimony">
-                        <p>"Monsoons are the only time we earn, because the apps surge 3x and people come back to us."
+                        <div>
+                            <div
+                                class="text-[8rem] font-decorative text-victorian-crimson leading-none drop-shadow-2xl">
+                                85%
+                            </div>
+                            <p class="text-2xl text-gray-300 font-serif mt-4">
+                                reported a <strong class="text-white text-3xl">significant decrease</strong>
+                                in daily
+                                bookings.
+                            </p>
+                        </div>
+
+                        <p class="text-2xl text-gray-500 italic font-serif pl-8 border-l-2 border-gray-700">
+                            "The algorithms favor long-distance rides for cabs. We are left with
+                            short-distance scraps."
                         </p>
-                        <cite>— Driver, age 52</cite>
                     </div>
                 </div>
-                <div class="stat-highlight">
-                    <div class="big-num">₹1,800</div>
-                    <div class="label">Avg. Monthly EMI Burden</div>
+        </section>
+
+        <!-- Slide 7: ADAPTATION -->
+        <section class="h-screen w-full snap-start flex items-center justify-center bg-victorian-darker p-16"
+            id="slide-7">
+            <div class="w-full max-w-[90%] grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+                <div class="h-[500px] w-full relative">
+                    <canvas id="strategyChart"></canvas>
+                </div>
+
+                <div class="space-y-10">
+                    <h2 class="font-decorative text-5xl text-victorian-gold mb-8">Adaptation Strategies
+                    </h2>
+
+                    <ul class="space-y-8">
+                        <li class="p-6 border-l-4 border-victorian-gold bg-white/5 hover:bg-white/10 transition-colors">
+                            <strong class="text-victorian-gold text-2xl block mb-2">Price Wars</strong>
+                            <span class="text-gray-300 font-serif text-xl">Unsustainable reduction of
+                                fares to
+                                compete.</span>
+                        </li>
+                        <li class="p-6 border-l-4 border-slate-600 bg-white/5 hover:bg-white/10 transition-colors">
+                            <strong class="text-slate-300 text-2xl block mb-2">Zone Shifting</strong>
+                            <span class="text-gray-300 font-serif text-xl">Relocating to peripheral,
+                                non-aggregated
+                                zones.</span>
+                        </li>
+                        <li
+                            class="p-6 border-l-4 border-victorian-crimson bg-white/5 hover:bg-white/10 transition-colors">
+                            <strong class="text-victorian-crimson text-2xl block mb-2">Helplessness</strong>
+                            <span class="text-gray-300 font-serif text-xl">No effective strategy
+                                adopted.</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 9: Conclusion & Policy -->
-        <section class="slide" id="slide-9">
-            <div class="content">
-                <h2>Recommendations: A Just Transition</h2>
-                <div class="rec-cards">
-                    <div class="rec">
-                        <h4>1. Bhopal Yatra App</h4>
-                        <p>Govt-backed, Zero-commission (ONDC Model).</p>
+        <!-- Slide D: FIELD EVIDENCE (3D Gallery) -->
+        <section
+            class="h-screen w-full snap-start flex flex-col items-center justify-center bg-victorian-dark p-16 overflow-hidden"
+            id="slide-D">
+            <h2 class="font-decorative text-5xl text-victorian-cream mb-12 border-b-2 border-victorian-gold/30 pb-4">
+                Field Evidence: The Human Cost</h2>
+
+            <div class="scene w-full max-w-6xl relative">
+                <div class="carousel" id="gallery-carousel">
+                    <!-- Javascript will inject images here -->
+                </div>
+            </div>
+
+            <div class="mt-12 flex gap-8 z-20">
+                <button id="prevBtn" class="carousel-nav-btn text-2xl flex items-center gap-2"><ion-icon
+                        name="arrow-back-outline"></ion-icon> Prev</button>
+                <button id="nextBtn" class="carousel-nav-btn text-2xl flex items-center gap-2">Next
+                    <ion-icon name="arrow-forward-outline"></ion-icon></button>
+            </div>
+
+            <p class="text-gray-500 font-serif italic mt-8">
+                Documentation from 40+ driver interviews across Bhopal (Dec 2025).
+            </p>
+        </section>
+
+        <!-- Slide 8: RECOMMENDATIONS -->
+        <section class="h-screen w-full snap-start flex flex-col items-center justify-evenly bg-victorian-dark p-16"
+            id="slide-8">
+            <h2 class="font-decorative text-5xl text-victorian-cream">Proposed Interventions</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-[90%] h-auto">
+                <!-- Rec 1 -->
+                <div
+                    class="bg-victorian-darker p-10 border-t-8 border-victorian-gold hover:-translate-y-2 transition-transform shadow-2xl flex flex-col items-center text-center">
+                    <div class="text-victorian-gold text-5xl mb-6"><ion-icon name="construct"></ion-icon></div>
+                    <h3 class="font-serif text-3xl text-white mb-4">Bhopal Yatra App</h3>
+                    <p class="text-xl text-gray-400 font-serif leading-relaxed">Development of a
+                        zero-commission,
+                        ONDC-compliant local platform.</p>
+                </div>
+
+                <!-- Rec 2 -->
+                <div
+                    class="bg-victorian-darker p-10 border-t-8 border-victorian-crimson hover:-translate-y-2 transition-transform shadow-2xl flex flex-col items-center text-center">
+                    <div class="text-victorian-crimson text-5xl mb-6"><ion-icon name="trending-up"></ion-icon></div>
+                    <h3 class="font-serif text-3xl text-white mb-4">Fare Rationalization</h3>
+                    <p class="text-xl text-gray-400 font-serif leading-relaxed">Dynamic floor pricing
+                        linked to fuel
+                        indices to prevent predatory pricing.</p>
+                </div>
+
+                <!-- Rec 3 -->
+                <div
+                    class="bg-victorian-darker p-10 border-t-8 border-victorian-gold hover:-translate-y-2 transition-transform shadow-2xl flex flex-col items-center text-center">
+                    <div class="text-victorian-gold text-5xl mb-6"><ion-icon name="school"></ion-icon>
                     </div>
-                    <div class="rec">
-                        <h4>2. Fare Rationalization</h4>
-                        <p>Dynamic minimum fare linked to fuel prices (₹106/L).</p>
-                    </div>
-                    <div class="rec">
-                        <h4>3. Digital Saathi</h4>
-                        <p>Upskilling for drivers aged 45+.</p>
-                    </div>
+                    <h3 class="font-serif text-3xl text-white mb-4">Digital Saathi</h3>
+                    <p class="text-xl text-gray-400 font-serif leading-relaxed">Targeted upskilling
+                        programs for the 45+
+                        demographic.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 10: References -->
-        <section class="slide" id="slide-10">
-            <div class="content">
-                <h2>References</h2>
-                <ul class="ref-list">
-                    <li>Gupta, R. & Kumar, S. (2021). <em>Consumer Perception of E-Hailing Apps</em>. Journal of Urban
-                        Transport.</li>
-                    <li>Raj, M. (2019). <em>The 'Uberisation' of Auto-Rickshaws in India</em>. Journal of Development
-                        Policy.</li>
-                    <li>Schumpeter, J. A. (1942). <em>Capitalism, Socialism and Democracy</em>.</li>
-                    <li>Verma, K. (2024). <em>Socio-Economic Distress among Auto Drivers</em>. Social Change.</li>
-                    <li>NITI Aayog (2023). <em>The Future of Work and the Gig Economy</em>.</li>
-                </ul>
-                <div class="end-note">Thank You</div>
+        <!-- Slide B: DIGITAL DIVIDE (Moved to end as per user flow preference or kept here) -->
+        <!-- Note: User flow had Slide B before? Let's keep strict order A -> 5 -> 6 -> B -> 7 -> D -> 8 -> C -> 9 -->
+        <!-- Re-inserting Slide B here if it was missing from flow above -->
+        <section class="h-screen w-full snap-start flex flex-col items-center justify-center bg-victorian-dark p-16"
+            id="slide-B">
+            <h2 class="font-decorative text-5xl text-victorian-cream mb-20 text-center">The Digital
+                Divide</h2>
+
+            <div class="w-full max-w-5xl grid grid-cols-3 gap-12 items-end h-[500px]">
+                <!-- Bar 1 -->
+                <div
+                    class="h-[32%] bg-gray-700 w-full relative group flex flex-col justify-end p-6 shadow-md transition-all hover:bg-gray-600">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-gray-300 mb-2">-32%</div>
+                        <div class="text-lg text-gray-400">25-35 Yrs</div>
+                    </div>
+                </div>
+                <!-- Bar 2 -->
+                <div
+                    class="h-[48%] bg-gray-600 w-full relative group flex flex-col justify-end p-6 shadow-md transition-all hover:bg-gray-500">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-gray-300 mb-2">-48%</div>
+                        <div class="text-lg text-gray-400">35-45 Yrs</div>
+                    </div>
+                </div>
+                <!-- Bar 3 (Focus) -->
+                <div
+                    class="h-[63%] bg-victorian-crimson w-full relative group shadow-2xl flex flex-col justify-end p-6 transition-all hover:bg-red-900 border-2 border-white/10">
+                    <div class="text-center">
+                        <div class="text-5xl font-bold text-white mb-2">-63%</div>
+                        <div class="text-xl text-white font-bold opacity-90">45+ Yrs</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center max-w-3xl p-6 bg-victorian-darker border border-victorian-gold/30">
+                <p class="text-2xl text-gray-200 font-serif">
+                    Drivers aged <span class="text-victorian-crimson font-bold text-3xl">45+</span>
+                    suffer double the
+                    income collapse due to technological barriers.
+                </p>
+            </div>
+        </section>
+
+        <!-- Slide C: WINDOW OF OPPORTUNITY -->
+        <section class="h-screen w-full snap-start flex flex-col items-center justify-center bg-victorian-darker p-16"
+            id="slide-C">
+            <h2 class="font-decorative text-5xl text-victorian-crimson mb-20 animate-pulse">Window of
+                Opportunity</h2>
+
+            <!-- Timeline -->
+            <div class="w-full max-w-6xl flex justify-between items-start relative mb-20">
+                <!-- Line -->
+                <div class="absolute top-8 left-0 w-full h-1 bg-gray-700 z-0"></div>
+
+                <!-- Q1 -->
+                <div class="relative z-10 flex flex-col items-center w-1/4">
+                    <div class="w-16 h-16 bg-victorian-darker border-4 border-victorian-gold rounded-full mb-6">
+                    </div>
+                    <strong class="text-white text-2xl block mb-2">Q1 2026</strong>
+                    <span class="text-gray-400 text-lg text-center">Consultation</span>
+                </div>
+                <!-- Q2 -->
+                <div class="relative z-10 flex flex-col items-center w-1/4">
+                    <div class="w-16 h-16 bg-victorian-darker border-4 border-victorian-gold rounded-full mb-6">
+                    </div>
+                    <strong class="text-white text-2xl block mb-2">Q2 2026</strong>
+                    <span class="text-gray-400 text-lg text-center">Pilot Launch</span>
+                </div>
+                <!-- Q3 -->
+                <div class="relative z-10 flex flex-col items-center w-1/4">
+                    <div class="w-16 h-16 bg-victorian-darker border-4 border-victorian-gold rounded-full mb-6">
+                    </div>
+                    <strong class="text-white text-2xl block mb-2">Q3 2026</strong>
+                    <span class="text-gray-400 text-lg text-center">Full Rollout</span>
+                </div>
+                <!-- Q4 -->
+                <div class="relative z-10 flex flex-col items-center w-1/4">
+                    <div
+                        class="w-16 h-16 bg-victorian-crimson border-4 border-white rounded-full mb-6 shadow-xl shadow-crimson/40">
+                    </div>
+                    <strong class="text-victorian-crimson text-2xl block mb-2">Q4 2026</strong>
+                    <span class="text-gray-400 text-lg text-center">Welfare Board</span>
+                </div>
+            </div>
+
+            <div
+                class="p-8 border-2 border-victorian-crimson/50 bg-victorian-crimson/10 text-center max-w-4xl shadow-2xl">
+                <p class="text-2xl text-gray-200 font-serif leading-relaxed">
+                    <strong class="text-white uppercase tracking-wider">Critical Urgency:</strong>
+                    Without intervention
+                    by Q1 2026, displacement of 40,000 drivers becomes structural and irreversible.
+                </p>
+            </div>
+        </section>
+
+        <!-- Slide 9: THANK YOU -->
+        <section class="h-screen w-full snap-start flex items-center justify-center bg-victorian-dark" id="slide-9">
+            <div class="text-center space-y-10">
+                <h1 class="font-decorative text-7xl text-victorian-gold">Thank You</h1>
+                <div class="w-32 h-1 bg-gray-700 mx-auto"></div>
+                <p class="text-2xl font-serif text-gray-400 uppercase tracking-[0.5em]">Group 19</p>
             </div>
         </section>
 
     </main>
-
-    <div class="controls">
-        <button onclick="prevSlide()"><ion-icon name="chevron-back-outline"></ion-icon></button>
-        <button onclick="nextSlide()"><ion-icon name="chevron-forward-outline"></ion-icon></button>
-    </div>
 
     <script src="script.js"></script>
 </body>
