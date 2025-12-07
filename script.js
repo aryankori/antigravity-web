@@ -1,5 +1,5 @@
 let currentSlideIndex = 1;
-const totalSlides = 10;
+const totalSlides = 11;
 
 function changeSlide(direction) {
     // Calculate new index
