@@ -1,57 +1,52 @@
+let currentSlideIndex = 1;
+const totalSlides = 10;
+
+function changeSlide(direction) {
+    // Calculate new index
+    let newIndex = currentSlideIndex + direction;
+
+    // Bounds check
+    if (newIndex < 1) newIndex = 1;
+    if (newIndex > totalSlides) newIndex = totalSlides;
+
+    // Update state
+    if (newIndex !== currentSlideIndex) {
+        // Remove active class from current
+        document.getElementById(`slide-${currentSlideIndex}`).classList.remove('active');
+
+        // Add active class to new
+        document.getElementById(`slide-${newIndex}`).classList.add('active');
+
+        // Update counters
+        currentSlideIndex = newIndex;
+        updateControls();
+    }
+}
+
+function updateControls() {
+    // Update text counter
+    document.getElementById('currentSlide').innerText = currentSlideIndex;
+
+    // Update Progress Bar
+    const progress = (currentSlideIndex / totalSlides) * 100;
+    document.getElementById('progressBar').style.width = `${progress}%`;
+
+    // Button states (optional visual cues)
+    document.querySelector('.nav-btn.prev').style.opacity = currentSlideIndex === 1 ? '0.3' : '1';
+    document.querySelector('.nav-btn.next').style.opacity = currentSlideIndex === totalSlides ? '0.3' : '1';
+}
+
+// Keyboard Navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'Space') {
+        changeSlide(1);
+    } else if (e.key === 'ArrowLeft') {
+        changeSlide(-1);
+    }
+});
+
+// Initialize
 document.addEventListener('DOMContentLoaded', () => {
-
-    // 1. Intersection Observer for Fade-in Animations
-    const observerOptions = {
-        root: null,
-        threshold: 0.3
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const content = entry.target.querySelector('.content');
-                if (content) {
-                    content.classList.add('visible');
-                }
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.slide').forEach(slide => {
-        observer.observe(slide);
-    });
-
-    // 2. Progress Bar
-    const progressBar = document.querySelector('.progress-bar');
-    const slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length;
-
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY;
-        const docHeight = document.body.scrollHeight - window.innerHeight;
-        const scrollPercent = (scrollTop / docHeight) * 100;
-
-        if (progressBar) {
-            progressBar.style.width = `${scrollPercent}%`;
-        }
-    });
-
-    // 3. Parallax Background Effect
-    window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY;
-
-        document.querySelectorAll('.background-image').forEach(bg => {
-            // Find the parent slide's offset
-            const parent = bg.parentElement;
-            const parentTop = parent.offsetTop;
-            const rate = (scrolled - parentTop) * 0.3;
-
-            // Only apply if near viewport to save perf
-            if (scrolled > parentTop - window.innerHeight && scrolled < parentTop + window.innerHeight) {
-                bg.style.transform = `translateY(${rate}px) scale(1.1)`;
-            }
-        });
-    });
-
-    console.log("Antigravity System Online.");
+    updateControls();
+    console.log("Deck System Online. Antigravity Protocol Active.");
 });
