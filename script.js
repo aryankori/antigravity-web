@@ -1,4 +1,5 @@
 // Victorian Theme Logic - Enhanced Readability (+2 Units)
+// Force Refresh: Fix Assets and Syntax
 // Handles Scroll Animations, Clean Charts, and 3D Carousel
 
 document.addEventListener('DOMContentLoaded', () => {
