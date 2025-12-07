@@ -42,18 +42,18 @@ function initCarousel() {
     const carousel = document.getElementById('gallery-carousel');
     if (!carousel) return;
 
-    // List of assets with FIXED placeholder URLs
+    // List of assets found in directory - RESTORED REAL EVIDENCE
     const assets = [
-        'https://placehold.co/400x300/1e293b/d4af37?text=Evidence+1',
-        'https://placehold.co/400x300/1e293b/d4af37?text=Evidence+2',
-        'https://placehold.co/400x300/1e293b/d4af37?text=Evidence+3',
-        'https://placehold.co/400x300/1e293b/d4af37?text=Evidence+4',
-        'https://placehold.co/400x300/1e293b/d4af37?text=Evidence+5',
-        'https://placehold.co/400x300/1e293b/d4af37?text=Evidence+6',
-        'https://placehold.co/400x300/1e293b/d4af37?text=Evidence+7',
-        'https://placehold.co/400x300/1e293b/d4af37?text=Evidence+8',
-        'https://placehold.co/400x300/1e293b/d4af37?text=Evidence+9',
-        'https://placehold.co/400x300/1e293b/d4af37?text=Evidence+10'
+        'IMG-20251204-WA0267.jpg',
+        'VID-20251204-WA0273.mp4',
+        'IMG-20251204-WA0276.jpg',
+        'IMG-20251204-WA0278.jpg',
+        'IMG-20251204-WA0282.jpg',
+        'IMG-20251204-WA0286.jpg',
+        'IMG-20251204-WA0303.jpg',
+        'IMG-20251204-WA0314.jpg',
+        'IMG-20251204-WA0318.jpg',
+        'IMG-20251204-WA0328.jpg'
     ];
 
     const cellCount = assets.length;
